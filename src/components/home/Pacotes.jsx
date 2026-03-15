@@ -7,7 +7,7 @@ export default function Pacotes() {
   const pacotes = [
     {
       nome: "START",
-      preco: "180.000 Kz",
+      preco: "150.000 Kz",
       descricao: "Ideal para pequenos negócios",
       itens: [
         "Até 4 páginas",
@@ -22,7 +22,7 @@ export default function Pacotes() {
     },
     {
       nome: "BUSINESS",
-      preco: "320.000 Kz",
+      preco: "280.000 Kz",
       descricao: "Ideal para empresas em crescimento",
       itens: [
         "Até 7 páginas",
@@ -37,7 +37,7 @@ export default function Pacotes() {
     },
     {
       nome: "PRO",
-      preco: "550.000 Kz",
+      preco: "480.000 Kz",
       descricao: "Para empresas mais estruturadas",
       itens: [
         "Até 10 páginas",
