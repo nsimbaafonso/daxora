@@ -39,7 +39,7 @@ export default function RootLayout({ children }) {
         {children}
 
         {/* Botão WhatsApp fixo do site */}
-        <WhatsAppButton phone="24492300000" size={64} />
+        <WhatsAppButton phone="244974636955" size={64} />
         <Toaster
           position="top-right"
           containerStyle={{
