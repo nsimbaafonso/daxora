@@ -42,7 +42,7 @@ export default function Contato() {
         {/* Cabeçalho */}
         <div className="max-w-3xl mb-20">
           <div className="flex items-center gap-3 mb-6">
-            <span className="w-12 h-[1px] bg-teal-600"></span>
+            <span className="w-12 h-px bg-teal-600"></span>
             <span className="text-teal-500 font-black text-sm uppercase tracking-[0.5em]">Briefing</span>
           </div>
           <h2 className="text-4xl md:text-7xl font-black uppercase tracking-tighter leading-none mb-8">
@@ -118,7 +118,7 @@ export default function Contato() {
 
               <button
                 type="submit"
-                className="bg-teal-600 hover:bg-teal-700 text-white w-full py-5 rounded-sm font-black text-sm md:text-base uppercase tracking-[0.3em] transition-all border-b-4 border-teal-800 active:translate-y-[2px] active:border-b-0 shadow-xl"
+                className="bg-teal-600 hover:bg-teal-700 text-white w-full py-5 rounded-sm font-black text-sm md:text-base uppercase tracking-[0.3em] transition-all border-b-4 border-teal-800 active:translate-y-2 active:border-b-0 shadow-xl"
               >
                 ENVIAR SOLICITAÇÃO
               </button>
