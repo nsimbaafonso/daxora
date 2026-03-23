@@ -6,24 +6,24 @@ import { motion, AnimatePresence } from "framer-motion";
 export default function Faq() {
   const faqs = [
     {
-      pergunta: "Quanto tempo leva para criar um site?",
+      pergunta: "QUANTO TEMPO LEVA PARA CRIAR UM SITE?",
       resposta:
-        "O prazo depende do pacote escolhido. Pacote START: 7–10 dias, BUSINESS: 10–15 dias, PRO: 15–20 dias.",
+        "O PRAZO É DEFINIDO PELO MÓDULO SELECIONADO. PACOTE START: 07–10 DIAS, BUSINESS: 10–15 DIAS, PRO: 15–20 DIAS ÚTEIS.",
     },
     {
-      pergunta: "Posso atualizar meu site sozinho?",
+      pergunta: "POSSO ATUALIZAR MEU SITE SOZINHO?",
       resposta:
-        "Sim! Nossos sites são construídos para que você tenha autonomia total. Você poderá alterar textos, imagens e posts de blog de forma simples e intuitiva.",
+        "SIM. NOSSAS PLATAFORMAS SÃO ENTREGUES COM INTERFACES GERENCIÁVEIS QUE GARANTEM AUTONOMIA TOTAL PARA ALTERAR TEXTOS, IMAGENS E CONTEÚDOS DE BLOG SEM DEPENDÊNCIA TÉCNICA.",
     },
     {
-      pergunta: "Vocês oferecem suporte após a entrega?",
+      pergunta: "VOCÊS OFERECEM SUPORTE APÓS A ENTREGA?",
       resposta:
-        "Com certeza! Cada pacote inclui um período de suporte dedicado (7 a 30 dias). Além disso, oferecemos planos de manutenção mensal para manter seu site sempre seguro e atualizado.",
+        "CADA PROJETO INCLUI UM PERÍODO DE SUPORTE DEDICADO DE 07 A 30 DIAS. TAMBÉM DISPONIBILIZAMOS PLANOS DE MANUTENÇÃO MENSAL PARA GARANTIR PERFORMANCE E SEGURANÇA CONTÍNUA.",
     },
     {
-      pergunta: "O site será responsivo para celulares e tablets?",
+      pergunta: "O SITE SERÁ OPTIMIZADO PARA DISPOSITIVOS MÓVEIS?",
       resposta:
-        "Sim, todos os projetos seguem o padrão 'Mobile First'. Seu site será otimizado para carregar rápido e ter uma aparência impecável em qualquer tamanho de tela.",
+        "SIM. TRABALHAMOS COM A METODOLOGIA 'MOBILE-FIRST'. SEU SITE TERÁ UMA PERFORMANCE IMPECÁVEL E CARREGAMENTO ULTRA-RÁPIDO EM QUALQUER SMARTPHONE OU TABLET.",
     },
   ];
 
@@ -34,58 +34,50 @@ export default function Faq() {
   };
 
   return (
-    <section id="faq" className="py-20 bg-gray-200">
-      <div className="max-w-7xl mx-auto px-6 text-center mb-16">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-3xl md:text-4xl font-bold text-blue-950 mb-4"
-        >
-          Dúvidas <span className="text-blue-600">Frequentes</span>
-        </motion.h2>
-        <p className="text-gray-700 text-lg md:text-xl max-w-2xl mx-auto">
-          Tudo o que você precisa saber para dar o próximo passo na
-          digitalização do seu negócio.
+    <section id="faq" className="relative py-32 bg-teal-950 overflow-hidden border-t border-teal-900/30">
+      {/* Elemento de fundo sutil */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-teal-600/5 blur-[100px] rounded-full pointer-events-none"></div>
+
+      <div className="max-w-7xl mx-auto px-6 relative z-10 text-center mb-24">
+        <div className="inline-block px-6 py-2 rounded-sm bg-teal-900 border border-teal-600/30 mb-8">
+          <span className="text-teal-600 font-black text-sm uppercase tracking-[0.4em]">Suporte</span>
+        </div>
+        <h2 className="text-4xl md:text-7xl font-black text-white uppercase tracking-tighter leading-none mb-8">
+          DÚVIDAS <span className="text-teal-600">FREQUENTES</span>
+        </h2>
+        <p className="text-gray-400 text-lg md:text-xl font-medium uppercase tracking-widest max-w-3xl mx-auto leading-relaxed">
+          TRANSPARÊNCIA TOTAL SOBRE O NOSSO PROCESSO DE ENGENHARIA DIGITAL.
         </p>
       </div>
 
-      <div className="max-w-3xl mx-auto px-6 space-y-4">
+      <div className="max-w-4xl mx-auto px-6 space-y-4">
         {faqs.map((faq, index) => {
           const isOpen = openIndex === index;
           return (
             <motion.div
               key={index}
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className={`rounded-2xl transition-all duration-300 border-2 ${
-                isOpen
-                  ? "bg-white border-blue-600 shadow-xl"
-                  : "bg-white border-transparent shadow-md"
+              className={`border transition-all duration-500 rounded-sm ${
+                isOpen ? "bg-teal-900/30 border-teal-500 shadow-2xl" : "bg-teal-900/10 border-teal-900 hover:border-teal-700"
               }`}
             >
               <button
                 onClick={() => toggle(index)}
-                className="w-full text-left px-6 py-5 flex justify-between items-center focus:outline-none"
+                className="w-full text-left px-8 py-7 flex justify-between items-center focus:outline-none group"
               >
-                <span
-                  className={`text-lg font-bold transition-colors ${isOpen ? "text-blue-600" : "text-blue-950"}`}
-                >
+                <span className={`text-sm md:text-base font-black tracking-widest transition-colors uppercase ${
+                  isOpen ? "text-teal-400" : "text-white group-hover:text-teal-500"
+                }`}>
                   {faq.pergunta}
                 </span>
-                <span
-                  className={`flex items-center justify-center w-8 h-8 rounded-full transition-all duration-300 ${
-                    isOpen
-                      ? "bg-blue-600 text-white rotate-180"
-                      : "bg-gray-100 text-blue-950"
-                  }`}
-                >
-                  <i
-                    className={`fa-solid ${isOpen ? "fa-chevron-up" : "fa-chevron-down"} text-sm`}
-                  ></i>
-                </span>
+                <div className={`w-8 h-8 flex items-center justify-center border transition-all duration-500 ${
+                  isOpen ? "bg-teal-600 border-teal-400 rotate-180" : "bg-transparent border-teal-800"
+                }`}>
+                  <i className={`fa-solid fa-chevron-down text-xs ${isOpen ? "text-white" : "text-teal-600"}`}></i>
+                </div>
               </button>
 
               <AnimatePresence>
@@ -94,10 +86,10 @@ export default function Faq() {
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: "auto", opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3, ease: "easeInOut" }}
+                    transition={{ duration: 0.4, ease: "circOut" }}
                     className="overflow-hidden"
                   >
-                    <div className="px-6 pb-6 text-gray-700 text-base leading-relaxed border-t border-gray-100 pt-4">
+                    <div className="px-8 pb-8 text-gray-300 text-sm md:text-base leading-loose font-medium tracking-wide border-t border-teal-800/50 pt-6">
                       {faq.resposta}
                     </div>
                   </motion.div>
@@ -106,21 +98,6 @@ export default function Faq() {
             </motion.div>
           );
         })}
-      </div>
-
-      {/* CTA Final abaixo do FAQ */}
-      <div className="mt-16 text-center">
-        <p className="text-gray-700 mb-6 font-medium text-lg">
-          Ainda tem alguma dúvida específica?
-        </p>
-        <a
-          href="https://wa.me/244999000111"
-          target="_blank"
-          className="inline-flex items-center bg-blue-800 hover:bg-blue-900 text-white px-8 py-4 rounded-full font-bold transition-all transform hover:scale-105 shadow-lg"
-        >
-          <i className="fa-brands fa-whatsapp mr-3 text-xl"></i>
-          Falar com Especialista
-        </a>
       </div>
     </section>
   );
